@@ -158,11 +158,15 @@ sns.heatmap(df1.corr(), annot=True)
 sns.countplot(x = 'Drive', data = df1)
 
 
+# we can conclude from this that a majority of people buy all wheel drive > front wheel drive > rear wheel drive
+
 # In[112]:
 
 
 sns.countplot(x = 'NumberofSeats', data = df1)
 
+
+# we can see here that people prefer buying 5 seater cars more > 7 > 4 > 2
 
 # In[113]:
 
@@ -171,12 +175,16 @@ plt.figure(figsize=(8,6))
 sns.countplot(x = 'NumberofSeats', hue='Drive', data=df1)
 
 
+# from this histogram we can make out that in 5 seater cars, the trend is to buy all wheel drive more whereas in 7 seater cars the trend is to but front wheel drive more.
+
 # In[114]:
 
 
 plt.figure(figsize=(18,10))
 sns.countplot(y = 'Manufacturer', data = df1)
 
+
+# from this countplot we can makeout that the most ev cars are sold by mercedes and then porche
 
 # In[115]:
 
@@ -186,11 +194,15 @@ plt.title("Vehicle KWH Compared with Number of Seats and Drive Type")
 plt.show()
 
 
+# here we can makeout that 7 seater cars offer more kwh 
+
 # In[116]:
 
 
 sns.relplot(x="KWH", y="Acceleration", height=6,hue="Drive",data=df1)
 
+
+# here we can makeout that all wheel drive cars offer more kwh
 
 # In[117]:
 
@@ -204,6 +216,8 @@ sns.relplot(x="KWH", y="Acceleration", size="NumberofSeats", height=6,sizes=(15,
 sns.relplot(x="TopSpeed", y="Range",height=6, hue="Drive",data=df1)
 
 
+# on an average we can makeout that all wheel drive cars offer more range
+
 # In[119]:
 
 
@@ -213,6 +227,8 @@ sns.displot(
 )
 
 
+# all wheel drive cars offer more top speed
+
 # In[120]:
 
 
@@ -221,6 +237,8 @@ sns.displot(
     binwidth=3, height=7, facet_kws=dict(margin_titles=True),
 )
 
+
+# 4 seater car here has shown to give maximum topspeed
 
 # In[121]:
 
@@ -255,6 +273,8 @@ sns.jointplot(x=df1["KWH"], y=df1["Efficiency"], kind="hex", color="#4CB391")
 
 sns.relplot(x="FastChargeSpeed", y="Efficiency", height=6,data=df1)
 
+
+# fast charge speed cars show lower efficiency
 
 # In[126]:
 
